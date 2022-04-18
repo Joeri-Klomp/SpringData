@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "werknemers")
-//@NamesEntityGraph om het n+1 probleem te voorkomen, dat kan opduiken bij findByVoornaamStartingWith() in WerknemerRepository
+//@NamedEntityGraph om het n+1 probleem te voorkomen, dat kan opduiken bij findByVoornaamStartingWith() in WerknemerRepository
 @NamedEntityGraph(name = "Werknemer.metFiliaal", attributeNodes = @NamedAttributeNode("filiaal"))
 public class Werknemer {
     @Id

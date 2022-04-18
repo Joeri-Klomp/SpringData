@@ -33,7 +33,7 @@ class WerknemerRepositoryTest extends AbstractTransactionalJUnit4SpringContextTe
     void findByVoornaamStartingWith() {
         assertThat(repository.findByVoornaamStartingWith("J"))
                 .hasSize(countRowsInTableWhere(WERKNEMERS, "voornaam like 'J%'"))
-                .allSatisfy(werknemer -> assertThat(werknemer.getVoornaam().toUpperCase()).startsWith("J"))
+                .allSatisfy(werknemer -> assertThat(werknemer.getVoornaam().toUpperCase()).startsWith("J"));
                 //Je haalt van elke werknemer de naam van het bijbehorende filiaal op.
     }
 
